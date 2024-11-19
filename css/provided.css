@@ -1,0 +1,23 @@
+/* Create Windows XP style window */
+.xp_desktop {
+    background-image: url('/images/desktop/windows_xp.png');
+    margin: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #EEF1DB;
+    /* center by default */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Create Windows XP style window */
+.xp_window {
+    width: 75%;
+    aspect-ratio: 16 / 9;
+    background-image: url('/images/desktop/windows_xp_window.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
