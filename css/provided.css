@@ -1,3 +1,30 @@
+/*img {*/
+/*    display: block;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*}*/
+
+div {
+    border: red 1px double;
+}
+
+.container-3 {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-items: center;
+    /*Gap: 20px;*/
+}
+
+.card {
+    border: black 1px double;
+    border-radius: 8px;
+}
+
 /* Create Windows XP style window */
 .xp_desktop {
     background-image: url('/images/desktop/windows_xp.png');
@@ -14,10 +41,56 @@
 
 /* Create Windows XP style window */
 .xp_window {
-    width: 75%;
-    aspect-ratio: 16 / 9;
+    border: purple 1px double;
+    /*width: 60%;*/
+    /*height: 45%;*/
+    width: 600px;
+    height: 450px;
     background-image: url('/images/desktop/windows_xp_window.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+/*
+Windows XP style button
+Opportunited from https://codepen.io/jo_Geek/pen/eBYQqX
+ */
+
+.winXP-wrap {
+    border: 1px solid RGB(1, 63, 102);
+    margin-right: 10px;
+    border-radius: 3px;
+    display: inline;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    background: #f6f6f6;
+    background: -moz-linear-gradient(top, #f6f6f6 0%, #ffffff 6%, #fffdfe 12%, #fbf9fa 18%, #f8f7f5 41%, #f7f3f0 47%, #f8f3ef 82%, #e7e0d8 94%, #dad3c9 100%);
+    background: -webkit-linear-gradient(top, #f6f6f6 0%, #ffffff 6%, #fffdfe 12%, #fbf9fa 18%, #f8f7f5 41%, #f7f3f0 47%, #f8f3ef 82%, #e7e0d8 94%, #dad3c9 100%);
+    background: linear-gradient(to bottom, #f6f6f6 0%, #ffffff 6%, #fffdfe 12%, #fbf9fa 18%, #f8f7f5 41%, #f7f3f0 47%, #f8f3ef 82%, #e7e0d8 94%, #dad3c9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#dad3c9', GradientType=0);
+}
+
+.winXP-btn {
+    padding: 3px 15px 3px 15px;
+    border: 2px solid transparent;
+    background: transparent;
+}
+
+.winXP-btn:hover,
+.winXP-btn:focus {
+    outline: 0;
+    border: 2px solid #B9D0F0;
+}
+
+.winXP-btn:active {
+    background: #dad3c9;
+    background: -moz-linear-gradient(top, #dad3c9 0%, #e7e0d8 6%, #f8f3ef 18%, #f7f3f0 53%, #f8f7f5 59%, #fbf9fa 82%, #fffdfe 88%, #ffffff 94%, #f6f6f6 100%);
+    background: -webkit-linear-gradient(top, #dad3c9 0%, #e7e0d8 6%, #f8f3ef 18%, #f7f3f0 53%, #f8f7f5 59%, #fbf9fa 82%, #fffdfe 88%, #ffffff 94%, #f6f6f6 100%);
+    background: linear-gradient(to bottom, #dad3c9 0%, #e7e0d8 6%, #f8f3ef 18%, #f7f3f0 53%, #f8f7f5 59%, #fbf9fa 82%, #fffdfe 88%, #ffffff 94%, #f6f6f6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dad3c9', endColorstr='#f6f6f6', GradientType=0);
+}
+
+.clear {
+    height: 10px;
 }
