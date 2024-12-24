@@ -440,7 +440,7 @@ document.???-1('???-2').innerText = ???-3;
 
 Just like setting your and your opponent's name, we'll need to update the score as well.
 
-- [ ] Replace `???` with the correct values
+- [x] Replace `???` with the correct values
     - ???-1 HINT: Forgot what comes after document?
       See [TODO #1.1](https://github.com/dlg1206/icspark-draw21/blob/ref/script.js#L14)
       and [TODO #4.1](https://github.com/dlg1206/icspark-draw21/blob/ref/js/opponent.js#L16)!
