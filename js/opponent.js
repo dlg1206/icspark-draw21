@@ -8,7 +8,7 @@ import {draw_and_update_card} from "../script.js";
 import {HIT_BUTTON, MAX_CARD_LIMIT, STAY_BUTTON} from "./game.js";
 
 // === START #4.1 ===
-// TODO #4: Add your opponent's name!
+// TODO #4.1: Add your opponent's name!
 // Remove the '/*' and '*/ once you do
 export const AI_ENABLED = false;    // Change from 'false' to 'true'
 const OPPONENT_NAME = "Calvin";       // Replace with your opponent's name!

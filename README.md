@@ -1,126 +1,330 @@
-# hello-world-test
+# Draw21
 
-## Simple Website Tutorial
+> Create your own draw-21 game using the power of variables and if statements!
 
-Welcome to the Simple Website Tutorial! This guide will walk you through the steps to create a basic website using HTML,
-CSS, and JavaScript.
+<img src="images/demo/example_final_product.png" alt="example final product">
 
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
 - [Project Structure](#project-structure)
+- [What is Draw 21?](#what-is-draw-21)
 - [Step-by-Step Guide](#step-by-step-guide)
-    - [1. Create the HTML File](#1-create-the-html-file)
-    - [2. Create the CSS File](#2-create-the-css-file)
-    - [3. Create the JavaScript File](#3-create-the-javascript-file)
-    - [4. Link the CSS and JavaScript Files](#4-link-the-css-and-javascript-files)
-    - [5. Open the HTML File in a Browser](#5-open-the-html-file-in-a-browser)
-- [Things to Look Out For](#things-to-look-out-for)
-- [Conclusion](#conclusion)
+    - [1. Adding your name!](#1-adding-your-name)
+    - [2. String Mix up!](#2-string-mix-up)
+    - [3. Do we have a loser?](#3-do-we-have-a-loser)
+    - [Halfway Point](#halfway-point)
+    - [4. Naming our opponent](#4-naming-our-opponent)
+    - [5. Write your own AI!](#5-write-your-own-ai)
+    - [6. Update the score](#6-update-the-score)
+- [Stretch Goals](#stretch-goals)
 
 ## Introduction
 
-In this tutorial, you'll learn how to create a simple website with an HTML structure, styled with CSS, and interactivity
-added using JavaScript. By the end of this guide, you will have a basic understanding of how these three technologies
-work together to create a functional webpage.
+In this tutorial, you'll learn how to use variables and if-else statements to make your own draw-21 game and even your
+own AI to play against!
 
 ## Project Structure
 
-Create a project directory and set up the following file structure:
+The project is set up like so:
 
 ```plaintext
-simple-website/
+icspark-draw21/
+├── README.md
+├── css
+│ └── provided.css
+├── images
+│ ├── deck
+│ │ └── all_card_images
+│ ├── demo
+│ │ └── example_final_product.png
+│ └── desktop
+│     ├── windows_xp.png
+│     └── windows_xp_window.png
 ├── index.html
-├── styles.css
+├── js
+│ ├── deck.js
+│ ├── game.js
+│ └── opponent.js
 └── script.js
 ```
 
+In this tutorial we will only be working with [index.html](index.html), [script.js](script.js),
+and [opponent.js](js/opponent.js), although all code has been explained in detail if you're curious! There's a lot of
+code, but each section has been marked with `=== START # ===` and `=== END # ===` so you know where to write your code!
+Also open your terminal at any time to get logging messages about the games progress.
+
+## What is Draw 21?
+
+Draw 21 is a simple card game where you draw random cards from a deck and try and get as close to 21 points (each card
+is worth a set number of points) without going over. For example:
+
+1. One (1) + Nine (9) + Jack (10) = 20 - You Win!
+2. King (10) + Five (5) + Six (6) + Three (3) = 24 - You Loose!
+
+Each turn you can decide to "hit" / draw a card to get closer to 21. You can also decide to "stay" or stop drawing cards
+if you think the next card will put you over 21. When playing with others, the player who is closest to 21 wins.
+
 ## Step-by-Step Guide
 
-### 1. Create the HTML File
+### 1. Adding your name!
 
-Open your code editor and create a file named `index.html`. Add the following code:
+<img src="images/demo/1_before.png" alt="before step 1">
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-Hello World!
-<script src="script.js"></script>
-</body>
-</html>
+Right now if you run `[index.html](index.html)`, you'll see `Player's Score`, but that's no fun! Find TODO #1.1
+in [script.js](script.js) ([here](https://github.com/dlg1206/icspark-draw21/blob/ref/script.js#L9-L17)).
+
+```js
+// === START #1.1 ===
+// TODO #1.1: Add your with your name!
+// Remove the '/*' and '*/ once you do
+/*
+const PLAYER_NAME ? ???;
+document.getElementById('???').textContent = ???;
+console.log("Let's play " + PLAYER_NAME +"!");
+*/
+// === END #1.1 ===
 ```
 
-### 2. Create the CSS File
+- [ ] Set the `PLAYER_NAME` variable to your name
+- [ ] Get the `id` of the player one `h1` tag in the [index.html](index.html) and set it to our new variable
+    - HINT: This is
+      the [span](https://github.com/dlg1206/icspark-draw21/blob/ref/index.html#L10): `<span id="???">Player</span>`.
+      What is the id?
+- [ ] Remove the '/*' and '*/'
 
-Create a file named `styles.css` and add the following code to style your webpage:
+Great, but if we refresh the page, it still says `Player's Score`! We'll need to add our javascript file to our html
+before we see any changes. Find TODO #1.2
+in [index.html](index.html) ([here](https://github.com/dlg1206/icspark-draw21/blob/967f85e0a18a88eedb4f823e744bb266886c7598/index.html#L29-L32)).
 
-```css
-body {
-    font-family: Arial, sans-serif;
+```html
+<!--START #1.2-->
+<!--TODO #1.2: Add the script!-->
+<!--<script type="module" src="???"></script>-->
+<!--END #1.2-->
+```
+
+- [ ] Replace `???` with the name of the javascript file we were just editing
+    - HINT: It starts with an "[s](script.js)"
+- [ ] Remove the '<!--' and '-->' surrounding the script
+  tag ([this line](https://github.com/dlg1206/icspark-draw21/blob/ref/index.html#L31))
+
+Now if we refresh the page, we'll see out name!
+
+<img src="images/demo/1_after.png" alt="after step 1">
+
+### 2. String Mix up!
+
+Find TODO #2 in [script.js](script.js) ([here](https://github.com/dlg1206/icspark-draw21/blob/ref/script.js#L34-L44)).
+
+```js
+// === START #2 ===
+// TODO #2: Complete the if-else tree!
+// Remove the '/*' and '*/ once you do
+/*
+if(value_str == "ace"){
+    player_score = player_score + 1;
+} else if(value_str == "two"){
+    player_score = player_score + 2;
+} ...
+ */
+// === END #2 ===
+```
+
+We've drawn a card from the deck and stored the value in the `value_str` variable and tracking the player's score in
+the `player_score`, but there's been a mix-up! `value_str` is a string ("ace", "two", "three", etc.) instead of a
+number (1, 2, 3, etc.)! Which means we'll have to use an if-else statement to decide how many points to add to the
+player score. The following cases need to be accounted for:
+
+- [ ] "ace"
+- [ ] "one"
+- [ ] "two"
+- [ ] "three"
+- [ ] "four"
+- [ ] "five"
+- [ ] "six"
+- [ ] "seven"
+- [ ] "eight"
+- [ ] "nine"
+- [ ] "ten"
+- [ ] "jack"
+- [ ] "queen"
+- [ ] "king"
+
+**Remember:** ace = 1 point. jack, queen, and king all = 10 points.
+
+The if-else tree has been started for you, see if you can finish it!
+
+Once you do, try refreshing the page and clicking the "Draw" button and watch the score go up!
+
+### 3. Do we have a loser?
+
+Nice, now our player score should be updated correctly! Lastly, we'll need to check to see if the `player_score`
+variable is **greater than** 21 to see if the player has lost. Find TODO #3
+in [script.js](script.js) ([here](https://github.com/dlg1206/icspark-draw21/blob/ref/script.js#L46-L53)).
+
+```js
+// === START #3 ===
+// TODO #3: Did the player lose?
+// REMEMBER: The player's score is stored in the 'player_score' variable
+// Remove the '/*' and '*/ to once you do
+/*
+YOUR CODE HERE
+ */
+// === END #3 ===
+```
+
+We'll need the help of the `alert()` function to let the player lost. This will create a popup window and can be used
+like so: `alert("You went over 21!")`
+But we'll also need an if statement to check, think you can do it?
+
+- [ ] Add an if statement to check if you went over 21
+- HINT: The player's score is stored in the `player_score` variable
+- HINT: We want to check if the `player_score` is **greater than ( > )** 21
+
+### Halfway Point
+
+Congrats on making it this far! You've made a working draw 21 game! Have some fun playing and when you're ready, we'll
+add an AI to play against!
+
+### 4. Naming our opponent
+
+First let's name our opponent. In [opponent.js](js/opponent.js), find TODO
+#4.1 ([here](https://github.com/dlg1206/icspark-draw21/blob/ref/js/opponent.js#L10-L18)).
+
+```js
+// === START #4.1 ===
+// TODO #4.1: Add your opponent's name!
+// Remove the '/*' and '*/ once you do
+export const AI_ENABLED = false;    // Change from 'false' to 'true'
+const OPPONENT_NAME = "Calvin";     // Replace with your opponent's name!
+/*
+document.getElementById('???').textContent = ???;
+*/
+// === END #4.1 ===
+```
+
+- [ ] Enable the AI! Change `export const AI_ENABLED = false;` to `export const AI_ENABLED = true;`
+- [ ] Name your opponent! Replace "Calvin" with whatever name you'd like
+- [ ] We'll also need to get the element, just like in step 1. Get the `id` of the player two `h1` tag in
+  the [index.html](index.html) and set it to our new variable
+    - HINT: This is
+      the [span](https://github.com/dlg1206/icspark-draw21/blob/ref/index.html#L14): `<span id="???">Opponent</span>`.
+      What is the id?
+
+Before we refresh the page, we need to make the opponent `h1` visible. Find TODO #4.2
+in [index.html](index.html) ([here](https://github.com/dlg1206/icspark-draw21/blob/ref/index.html#L12-L16)).
+
+```html
+<!--START #4.2-->
+<!--TODO #4.2: Add the new player!-->
+<h1 style="font-family:Arial, sans-serif; display: none"><span id="p2_name">Opponent</span>'s Score: <span
+        id="p2_current_score">0</span></h1>
+<!--END #4.2-->
+```
+
+- [ ] Delete `display: none`
+    - Before: "... style="font-family:Arial, sans-serif; **display: none**">..."
+    - After: "... style="font-family:Arial, sans-serif;"><span id="p2_name">..."
+
+The end result should look like this:
+
+```html
+<!--START #4.2-->
+<!--TODO #4.2: Add the new player!-->
+<h1 style="font-family:Arial, sans-serif;"><span id="p2_name">Opponent</span>'s Score: <span
+        id="p2_current_score">0</span></h1>
+<!--END #4.2-->
+```
+
+This will make our opponent's name visible. Refresh the page and see!
+
+<img src="images/demo/4_after.png" alt="after step 4">
+
+### 5. Write your own AI!
+
+This is where the fun begins! Find TODO #5
+in [opponent.js](js/opponent.js) ([here](https://github.com/dlg1206/icspark-draw21/blob/ref/js/opponent.js#L53-L59)).
+
+```js
+// === START #5 ===
+// TODO #5: Develop your own AI!
+// Remove the '/*' and '*/ once you do
+/*
+YOUR CODE HERE
+ */
+// === END #5 ===
+```
+
+Here we can use if-else statements to program an AI to play against. We have three variables available to use:
+
+- `this.#score`: This is a special variable that tracks the AI's score as a number
+- `player_one_score`: This is a number that represents the user's current score
+- `is_player_one_staying`: This is a boolean (true or false) whether the user has decided to stay / stop drawing cards
+
+Using these variables, we decide if the AI should stop drawing cards using the special `this.#stay()` variable. Feel
+free to design your own or copy and paste some example strategies from below!
+
+**All in 😎**
+
+```js
+if (this.#score >= 18) {
+    // Once the score reaches 18 or more, stop drawing
+    this.#stay();
 }
 ```
 
-### 3. Create the JavaScript File
+**Slow and Steady 🐢**
 
-Create a file named `script.js`
+```js
+// Stay if the AI's score is less than the player's score and the player is not staying
+if (this.#score >= player_one_score || is_player_one_staying) {
+    // Stop drawing if the AI's score is equal to or greater than the player's, or the player is staying
+    this.#stay();
+}
+```
 
-### 4. Link the CSS and JavaScript Files
+**Balanced (as all things should be) ⚖**
 
-Ensure that the CSS and JavaScript files are linked correctly in your `index.html` file. The `<link>` tag for CSS should
-be inside the `<head>` section, and the `<script>` tag for JavaScript should be just before the closing `</body>` tag.
+```js
+if (this.#score >= 16 || this.#score > 21) {
+    // If the AI's score is 16 or higher (or over 21), stop drawing
+    this.#stay();
+}
+```
 
-### 5. Open the HTML File in a Browser
+### 6. Update the score
 
-Open your `index.html` file in a web browser to see your simple website in action. You should see a styled heading, a
-paragraph, and a button that displays an alert when clicked.
+Once the AI has been programmed, we'll need to update the HTML. Find TODO #6
+in [opponent.js](js/opponent.js) ([here](https://github.com/dlg1206/icspark-draw21/blob/ref/js/opponent.js#L72-L78)).
 
-## Things to Look Out For
+```js
+// === START #6 ===
+// TODO #6: Update the score!
+// Remove the '/*' and '*/ once you do
+/*
+document.???('???').innerText = ???;
+ */
+// === END #6 ===
+```
 
-- Ensure the file paths in the `<link>` and `<script>` tags are correct.
-- Use proper HTML structure and semantics.
-- Keep your CSS organized and use meaningful class names.
-- Avoid inline styles and JavaScript as much as possible for better maintainability.
-- Test your website in different browsers to ensure compatibility.
+Just like setting your and your opponent's name, we'll need to update the score as well.
+
+- [ ] Add the missing values
+    - HINT: Forgot what comes after document?
+      See [TODO #1.1](https://github.com/dlg1206/icspark-draw21/blob/ref/script.js#L14)
+      and [TODO #4.1](https://github.com/dlg1206/icspark-draw21/blob/ref/js/opponent.js#L16)!
+    - HINT: This is
+      the [span](https://github.com/dlg1206/icspark-draw21/blob/ref/index.html#L15): `id="???">0</span></h1>`.
+      What is the id?
+    - HINT: Remember the special variable we use to track the AI's score is `this.#score`
+
+Now you're ready to go, have fun playing against your own custom AI! :)
 
 ## Stretch Goals
 
-If you finish early, feel free to try out these additions to your website!
+Here's some simple ideas if you're looking for more of a challenge!
 
-### 6. Make it a Header!
-
-Enclose the "Hello World!" in an ``<h1>`` tag as shown here:
-```<h1> Hello World! </h1>```
-<br>
-The full code should now look like this:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<h1> Hello World! </h1>
-<script src="script.js"></script>
-</body>
-</html>
-```
-
-## Conclusion
-
-Congratulations! You've created a simple website using HTML, CSS, and JavaScript. This is just the beginning – there are
-many more features and technologies to explore. Keep learning and experimenting to build more complex and dynamic
-websites.
-
-Feel free to reach out if you have any questions or feedback. Happy coding!
+- Design another strategy! Think you can come up with an AI that will always win?
+- Create and track a high score!
+- Add a `Reset Game` Button
