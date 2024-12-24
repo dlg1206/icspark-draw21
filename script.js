@@ -64,11 +64,8 @@ export function draw_and_update_card(deck, player_score) {
     // TODO #3: Did the player lose?
     // REMEMBER: The player's score is stored in the 'player_score' variable
     // Remove the '/*' and '*/ to once you do
-    /*
-    __(player_score ? 21){
+    if(player_score > 21)
         alert("You went over 21!");
-    }
-     */
     // === END #3 ===
 
     return player_score;
