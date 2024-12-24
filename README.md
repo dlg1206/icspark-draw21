@@ -86,14 +86,14 @@ console.log("Let's play " + PLAYER_NAME +"!");
 // === END #1.1 ===
 ```
 
-- [ ] Line 12: set `PLAYER_NAME` variable to your name
+- [x] Line 12: set `PLAYER_NAME` variable to your name
   - HINT: We are **assigning** a variable, so should the first '?' be "=" or "=="?
   - HINT: ??? is your name. Remember for strings we need to put text inside quotes ("Your Name")
-- [ ] Get the `id` of the player one `h1` tag in the [index.html](index.html) and set it to our new variable
+- [x] Get the `id` of the player one `h1` tag in the [index.html](index.html) and set it to our new variable
     - HINT: This is
       the [span](https://github.com/dlg1206/icspark-draw21/blob/ref/index.html#L10): `<span id="???">Player</span>`.
       What is the id?
-- [ ] Remove the '/\*' and '*/'
+- [x] Remove the '/\*' and '*/'
 
 <details>
 <summary>#1.1 Solution</summary>
