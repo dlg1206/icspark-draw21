@@ -73,9 +73,9 @@ export class Opponent {
         // === START #6 ===
         // TODO #6: Update the score!
         // Remove the '/*' and '*/ once you do
-        /*
-        document.???('???').innerText = ???;
-         */
+
+        document.getElementById('p2_current_score').innerText = this.#score;
+
         // === END #6 ===
 
         // Re-enable buttons for player
