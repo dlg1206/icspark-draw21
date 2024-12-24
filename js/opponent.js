@@ -138,7 +138,7 @@ export class Opponent {
      * Sleep / wait for 5 seconds to mimic AI playing a turn
      */
     #sleep() {
-        new Promise(resolve => setTimeout(resolve, 500)).then();
+        return new Promise(resolve => setTimeout(resolve, 500)).then();
     }
 
 }
