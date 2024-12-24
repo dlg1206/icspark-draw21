@@ -63,7 +63,7 @@ export function play_game() {
             handle_player_bust(deck, player_score, opponent);   // Handle bust logic - ie let the ai finish playing
         } else if (opponent != null && !opponent.is_staying()) {
             // Don't worry about the .then() part. There's a reason for it but for now think: "ai plays its turn, THEN print a message when its turn is done"
-            opponent.play_turn(deck, player_score).then(() => console.log("It's Player's turn!"));
+            opponent.play_turn(deck, player_score, false).then(() => console.log("It's Player's turn!"));
         }
     });
 
@@ -98,7 +98,7 @@ function handle_player_bust(deck, player_score, opponent) {
         end_game("You lost! You went over by " + (player_score - MAX_CARD_LIMIT) + "!");    // Print loss message
     } else {
         // Like before, think of this as "When the ai finishes playing, THEN determine who won"
-        opponent.play_until_done(deck, player_score).then(() => {
+        opponent.play_until_done(deck, player_score, true).then(() => {
             determine_winner(player_score, opponent.get_score());
         });
     }
@@ -125,7 +125,7 @@ function handle_player_stay(deck, player_score, opponent) {
         end_game("You win with a score of " + player_score + "!");      // Print win message
     } else {
         // Like before, think of this as "When the ai finishes playing, THEN determine who won"
-        opponent.play_until_done(deck, player_score).then(() => {
+        opponent.play_until_done(deck, player_score, true).then(() => {
             determine_winner(player_score, opponent.get_score());
         });
     }
