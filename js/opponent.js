@@ -102,7 +102,7 @@ export class Opponent {
         }
         // If the loop ended because the AI lost, print that
         if (this.#score > MAX_CARD_LIMIT)
-            console.warn(this.#score + " went bust!");  // Print that the AI lost
+            console.warn(this.#name + " went bust!");  // Print that the AI lost
     }
 
     /**
