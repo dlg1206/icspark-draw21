@@ -248,7 +248,7 @@ We'll need the help of the `alert()` function to let the player lost. This will 
 like so: `alert("You went over 21!")`
 But we'll also need an if statement to check, think you can do it?
 
-- [ ] Add an if statement to check if you went over 21
+- [x] Add an if statement to check if you went over 21
   - [ ] Replace `__` with the missing `if` keyword
   - [ ] We want to check if the `player_score` is **greater than ( > )** 21. Replace the `?` with the correct symbol
 - [ ] Remove the '/\*' and '*/'
