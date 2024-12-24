@@ -103,9 +103,6 @@ export class Opponent {
         // If the loop ended because the AI lost, print that
         if (this.#score > MAX_CARD_LIMIT)
             console.warn(this.#score + " went bust!");  // Print that the AI lost
-        // If the loop ended because the AI stayed, print that
-        if (this.#is_staying)
-            console.warn(this.#name + " is staying!");  // Print that the AI is staying
     }
 
     /**
