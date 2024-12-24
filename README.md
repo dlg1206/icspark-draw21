@@ -289,9 +289,9 @@ document.getElementById('???').textContent = ???;
 // === END #4.1 ===
 ```
 
-- [ ] Enable the AI! Change `export const AI_ENABLED = false;` to `export const AI_ENABLED = true;`
-- [ ] Name your opponent! Replace "Calvin" with whatever name you'd like
-- [ ] We'll also need to get the element, just like in step 1. Get the `id` of the player two `h1` tag in
+- [x] Enable the AI! Change `export const AI_ENABLED = false;` to `export const AI_ENABLED = true;`
+- [x] Name your opponent! Replace "Calvin" with whatever name you'd like
+- [x] We'll also need to get the element, just like in step 1. Get the `id` of the player two `h1` tag in
   the [index.html](index.html) and set it to our new variable
     - HINT: This is
       the [span](https://github.com/dlg1206/icspark-draw21/blob/ref/index.html#L14): `<span id="???">Opponent</span>`.
