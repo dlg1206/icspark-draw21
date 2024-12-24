@@ -325,7 +325,7 @@ in [index.html](index.html) ([here](https://github.com/dlg1206/icspark-draw21/bl
 <!--END #4.2-->
 ```
 
-- [ ] Delete `display: none`
+- [x] Delete `display: none`
     - Before: "... style="font-family:Arial, sans-serif; **display: none**">..."
     - After: "... style="font-family:Arial, sans-serif;"><span id="p2_name">..."
 
