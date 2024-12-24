@@ -10,11 +10,11 @@ import {HIT_BUTTON, MAX_CARD_LIMIT, STAY_BUTTON} from "./game.js";
 // === START #4.1 ===
 // TODO #4.1: Add your opponent's name!
 // Remove the '/*' and '*/ once you do
-export const AI_ENABLED = false;    // Change from 'false' to 'true'
-const OPPONENT_NAME = "Calvin";       // Replace with your opponent's name!
-/*
-document.getElementById('???').textContent = ???;
-*/
+export const AI_ENABLED = true;    // Change from 'false' to 'true'
+const OPPONENT_NAME = "Suzie";       // Replace with your opponent's name!
+
+document.getElementById('p2_name').textContent = OPPONENT_NAME;
+
 // === END #4.1 ===
 
 /*
