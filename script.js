@@ -12,7 +12,7 @@ import {CARD_IMAGE, play_game} from "./js/game.js"; // We are 'importing' variab
 
 const PLAYER_NAME = "Hobbes";
 document.getElementById('p1_name').textContent = PLAYER_NAME;
-console.log("Let's play " + PLAYER_NAME +"!");
+console.log("Let's play " + PLAYER_NAME + "!");
 
 // === END #1.1 ===
 
@@ -34,13 +34,30 @@ export function draw_and_update_card(deck, player_score) {
     // === START #2 ===
     // TODO #2: Complete the if-else tree!
     // Remove the '/*' and '*/ once you do
-    /*
-    if(value_str == "ace"){
+
+    if (value_str == "ace") {
         player_score = player_score + 1;
-    } else if(value_str == "two"){
+    } else if (value_str == "two") {
         player_score = player_score + 2;
-    } ...
-     */
+    } else if (value_str == "three") {
+        player_score = player_score + 3;
+    } else if (value_str == "four") {
+        player_score = player_score + 4;
+    } else if (value_str == "five") {
+        player_score = player_score + 5;
+    } else if (value_str == "six") {
+        player_score = player_score + 6;
+    } else if (value_str == "seven") {
+        player_score = player_score + 7;
+    } else if (value_str == "eight") {
+        player_score = player_score + 8;
+    } else if (value_str == "nine") {
+        player_score = player_score + 9;
+    } else {
+        // Drew a ten or face card and all faces are equal to 10
+        player_score = player_score + 10;
+    }
+
     // === END #2 ===
 
     // === START #3 ===
