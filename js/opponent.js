@@ -53,9 +53,10 @@ export class Opponent {
         // === START #5 ===
         // TODO #5: Develop your own AI!
         // Remove the '/*' and '*/ once you do
-        /*
-        YOUR CODE HERE
-         */
+        if (this.#score >= 18) {
+            // Once the score reaches 18 or more, stop drawing
+            this.#stay();
+        }
         // === END #5 ===
 
         // If decided to stay, enable buttons and return
