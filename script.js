@@ -13,7 +13,7 @@ console.log("Let's play " + PLAYER_NAME +"!");
 
 export function draw_and_update_card(deck, player_score) {
     let card = deck.draw_card();    // Draw card from the deck
-    console.log("../images/deck/" + card.get_file_name());      // Print the file going to use for png
+    console.log("../images/deck/" + card.get_file_name() + " is drawn. . .");      // Print the file going to use for png
     CARD_IMAGE.src = "/images/deck/" + card.get_file_name();    // Update the source image to the drawn card
 
     let value_str = card.value;     // Get the string value of the card
@@ -29,16 +29,6 @@ export function draw_and_update_card(deck, player_score) {
     } ...
      */
     // === END #2.1 ===
-
-    console.log("Player One's score is " + player_score);
-
-    // === START #2.2 ===
-    // TODO #2.2: Update the score!
-    // Remove the '/*' and '*/ once you do
-    /*
-    document.???('???').innerText = ???;    // todo: add hint in readme
-     */
-    // === END #2.2 ===
 
     // === START #3 ===
     // TODO #3: Did the player lose?
