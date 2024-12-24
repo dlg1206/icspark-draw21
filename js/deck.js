@@ -1,15 +1,9 @@
 /*
-'MAX_CARD_LIMIT' is a global variable. Globals are used when we want to use the same value in multiple places in
-our code. This way if we want to change it in the future, we just need to change it in one place!
- */
-const MAX_CARD_LIMIT = 21;
-
-/*
 'Card' is a class. A class is used when we have a thing that has certain values and can do certain actions. In this
 case, the Card class is the 'blueprint' of a card. We know a card has a suite and a value BUT we don't have the actual
 deck yet. When we call 'new Card("hearts", "Q")', that creates an 'instance' or actual card, in this case a queen of hearts
  */
-class Card{
+class Card {
     /*
     Create 'private variables' that can only be accessed from inside our class.
      */
@@ -32,7 +26,7 @@ class Card{
      *
      * @returns {string} name of card png
      */
-    get_file_name(){
+    get_file_name() {
         return this.#suite_name + "_" + this.#value + ".png"
     }
 
@@ -41,7 +35,7 @@ class Card{
      *
      * @returns {*} Value of card
      */
-    get_value(){
+    get_value() {
         /*
         TODO - Can you move the 'if' statements here so the number value is always returned?
          */
@@ -54,7 +48,7 @@ class Card{
 case, the Deck class is the 'blueprint' of a card deck. We know a deck has 52 cards, with 13 cards per suite, and we can
 draw a card from the deck BUT we don't have the actual deck yet
  */
-class Deck {
+export class Deck {
     /*
     Create 'private variables' that can only be accessed from inside our class. Think about looking through a deck with
     all the backs of the cards facing you. You know that the deck has cards, but not what suites or faces are in the deck.
@@ -169,28 +163,3 @@ class Deck {
     }
 
 }
-
-function main() {
-    // start button
-    let total = 0;
-    const deck = new Deck();
-    let card_image = document.getElementById('current_card');
-    const card_button = document.getElementById('hit-btn');
-
-    card_button.addEventListener("click", function () {
-        let card = deck.draw_card();
-        console.log("../images/deck/" + card.get_file_name());
-        card_image.src = "/images/deck/" + card.get_file_name();
-    });
-
-    // while(total < MAX_CARD_LIMIT){
-    //     // 1. Update html
-    //     let card = deck.draw_card();
-    //     card_image.src = "../images/deck/" + card.get_file_name();
-    //
-    //     // 2. get user input to hit or stay
-    //     // 3. check if win or loose
-    // }
-}
-
-main()

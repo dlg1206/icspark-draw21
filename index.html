@@ -1,24 +1,30 @@
 <html lang="en">
 <head>
     <title>Week 4: Draw 21</title>
-    <script defer src="js/provided.js"></script>
     <link href="css/provided.css" rel="stylesheet">
 </head>
 <body class="xp_desktop">
 <div class="xp_window">
-    <div class="container-3">
-        <div style="grid-column: span 3;">
-            <img alt="card back" class="card" height="60%" id="current_card" src="images/deck/card_back.png">
+    <div class="container grid-2">
+        <div>
+            <h1 style="font-family:Arial, sans-serif;"><span id="p1_name">Player</span>'s Score: <span
+                    id="p1_current_score">0</span></h1>
         </div>
-        <div style="grid-column: span 3;">
-            <div class="winXP-wrap"><input class="winXP-btn" id="hit-btn" type="button" value="Draw"/></div>
-            <div class="winXP-wrap"><input class="winXP-btn" id="stay-btn" type="button" value="Stay"/></div>
+        <div class="center">
+            <img alt="card back" class="card" height="60%" id="current_card" src="images/deck/card_back.png">
+            <div>
+                <div class="winXP-wrap"><input class="winXP-btn" id="hit-btn" type="button" value="Draw"/></div>
+                <div class="winXP-wrap"><input class="winXP-btn" id="stay-btn" type="button" value="Stay"/></div>
+            </div>
         </div>
     </div>
 
 </div>
-
-
+<!--TODO #2: Add the script!-->
+<!--<script type="module" src="???"></script>-->
+<script src="script.js" type="module"></script> <!--todo remove-->
+<script src="./js/deck.js" type="module"></script>
+<script src="./js/game.js" type="module"></script>
 </body>
 
 </html>
