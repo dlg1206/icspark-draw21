@@ -1,3 +1,9 @@
+/**
+ * @file deck.js
+ * @description Logic for a deck of playing cards
+ * @author Derek Garcia
+ */
+
 /*
 'Card' is a class. A class is used when we have a thing that has certain values and can do certain actions. In this
 case, the Card class is the 'blueprint' of a card. We know a card has a suite and a value BUT we don't have the actual
@@ -5,7 +11,8 @@ deck yet. When we call 'new Card("hearts", "Q")', that creates an 'instance' or 
  */
 class Card {
     /*
-    Create 'private variables' that can only be accessed from inside our class.
+    Create 'private variables' that can only be accessed from inside our class. We use private variables wherever
+    possible since we want people to know as little as possible about our variables whenever possible
      */
     #suite_name
     #value
@@ -36,10 +43,12 @@ class Card {
      * @returns {*} Value of card
      */
     get_value() {
+        // === START Challenge 1 ===
         /*
-        TODO - Can you move the 'if' statements here so the number value is always returned?
+         TODO - Can you move the 'if' statements from TODO 2.1 here so the number value is always returned?
          */
         return this.#value
+        // === END Challenge 1 ===
     }
 }
 
@@ -52,7 +61,7 @@ export class Deck {
     /*
     Create 'private variables' that can only be accessed from inside our class. Think about looking through a deck with
     all the backs of the cards facing you. You know that the deck has cards, but not what suites or faces are in the deck.
-    We use private variables wherever possible since we want people to know as little as possible about our variables wherever
+    We use private variables wherever possible since we want people to know as little as possible about our variables whenever
     possible
      */
     #clubs;
@@ -131,14 +140,16 @@ export class Deck {
 
         const value = this.#remove_card(suite);     // attempt to remove a card from the suite
         // If there are no cards left to draw from that suite, draw another card
-        if (value === null)
+        if (value === null) {
+            // === Start Challenge 2 ===
             /*
             TODO - What happens if the deck is completely empty?
              (Hint: Will draw forever until get a card, so if there's no cards left. . .)
              Can you add a check / handle that case?
              */
             return this.draw_card()
-
+            // === End Challenge 2 ==
+        }
         // return a new card with the suite name and value of the card
         // This represents a real card
         return new Card(suite_name, value)
@@ -158,7 +169,7 @@ export class Deck {
         if (suite.length === 0)
             return null
 
-        const card_index = Math.floor(Math.random() * suite.length); // pick a random card
+        const card_index = Math.floor(Math.random() * suite.length);    // pick a random card
         return suite.splice(card_index, 1)[0];      // Remove the card from the deck and return the card drawn
     }
 

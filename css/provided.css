@@ -1,7 +1,3 @@
-div {
-    border: red 1px double;
-}
-
 .center {
     display: flex;
     flex-direction: column;
@@ -48,7 +44,7 @@ div {
 
 /* Create Windows XP style window */
 .xp_window {
-    border: purple 1px double;
+    /*border: purple 1px double;*/
     /*todo better way to dynamic scale with site?*/
     width: 600px;
     height: 450px;
