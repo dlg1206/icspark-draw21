@@ -123,9 +123,9 @@ in [index.html](index.html) ([here](https://github.com/dlg1206/icspark-draw21/bl
 <!--END #1.2-->
 ```
 
-- [ ] Replace `???` with the name of the javascript file we were just editing
+- [x] Replace `???` with the name of the javascript file we were just editing
     - HINT: It starts with an "[s](script.js)"
-- [ ] Remove the '\<!--' and '-->' surrounding the script
+- [x] Remove the '\<!--' and '-->' surrounding the script
   tag ([this line](https://github.com/dlg1206/icspark-draw21/blob/ref/index.html#L31))
 
 <details>
