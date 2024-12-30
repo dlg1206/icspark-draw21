@@ -71,7 +71,7 @@ if you think the next card will put you over 21. When playing with others, the p
 
 <img src="images/demo/1_before.png" alt="before step 1">
 
-Right now if you run `[index.html](index.html)`, you'll see `Player's Score`, but that's no fun! Find TODO #1.1
+Right now if you run [index.html](index.html), you'll see `Player's Score`, but that's no fun! Find TODO #1.1
 in [script.js](script.js) ([here](https://github.com/dlg1206/icspark-draw21/blob/ref/script.js#L9-L17)).
 
 ```js
@@ -86,12 +86,31 @@ console.log("Let's play " + PLAYER_NAME +"!");
 // === END #1.1 ===
 ```
 
-- [ ] Set the `PLAYER_NAME` variable to your name
+- [ ] Line 12: set `PLAYER_NAME` variable to your name
+  - HINT: We are **assigning** a variable, so should the first '?' be "=" or "=="?
+  - HINT: ??? is your name. Remember for strings we need to put text inside quotes ("Your Name")
 - [ ] Get the `id` of the player one `h1` tag in the [index.html](index.html) and set it to our new variable
     - HINT: This is
       the [span](https://github.com/dlg1206/icspark-draw21/blob/ref/index.html#L10): `<span id="???">Player</span>`.
       What is the id?
-- [ ] Remove the '/*' and '*/'
+- [ ] Remove the '/\*' and '*/'
+
+<details>
+<summary>#1.1 Solution</summary>
+
+```
+// === START #1.1 ===
+// TODO #1.1: Add your with your name!
+// Remove the '/*' and '*/ once you do
+
+const PLAYER_NAME = "Hobbes";
+document.getElementById('p1_name').textContent = PLAYER_NAME;
+console.log("Let's play " + PLAYER_NAME +"!");
+
+// === END #1.1 ===
+```
+
+</details>
 
 Great, but if we refresh the page, it still says `Player's Score`! We'll need to add our javascript file to our html
 before we see any changes. Find TODO #1.2
@@ -106,10 +125,21 @@ in [index.html](index.html) ([here](https://github.com/dlg1206/icspark-draw21/bl
 
 - [ ] Replace `???` with the name of the javascript file we were just editing
     - HINT: It starts with an "[s](script.js)"
-- [ ] Remove the '<!--' and '-->' surrounding the script
+- [ ] Remove the '\<!--' and '-->' surrounding the script
   tag ([this line](https://github.com/dlg1206/icspark-draw21/blob/ref/index.html#L31))
 
-Now if we refresh the page, we'll see out name!
+<details>
+<summary>1.2 Solution</summary>
+
+```
+<!--START #1.2-->
+<!--TODO #1.2: Add the script!-->
+<script type="module" src="script.js"></script>
+<!--END #1.2-->
+```
+</details>
+
+Now if we refresh the page, we'll see our name!
 
 <img src="images/demo/1_after.png" alt="after step 1">
 
@@ -155,7 +185,45 @@ player score. The following cases need to be accounted for:
 
 The if-else tree has been started for you, see if you can finish it!
 
+- [ ] Remove the '/\*' and '*/'
+
 Once you do, try refreshing the page and clicking the "Draw" button and watch the score go up!
+
+<details>
+<summary>#2 Solution</summary>
+
+```
+<!--
+// === START #2 ===
+// TODO #2: Complete the if-else tree!
+// Remove the '/*' and '*/ once you do
+
+    if (value_str == "ace") {
+        player_score = player_score + 1;
+    } else if (value_str == "two") {
+        player_score = player_score + 2;
+    } else if (value_str == "three") {
+        player_score = player_score + 3;
+    } else if (value_str == "four") {
+        player_score = player_score + 4;
+    } else if (value_str == "five") {
+        player_score = player_score + 5;
+    } else if (value_str == "six") {
+        player_score = player_score + 6;
+    } else if (value_str == "seven") {
+        player_score = player_score + 7;
+    } else if (value_str == "eight") {
+        player_score = player_score + 8;
+    } else if (value_str == "nine") {
+        player_score = player_score + 9;
+    } else {
+        // Drew a ten or face card and all faces are equal to 10
+        player_score = player_score + 10;
+    }
+
+    // === END #2 ===
+```
+</details>
 
 ### 3. Do we have a loser?
 
@@ -169,7 +237,9 @@ in [script.js](script.js) ([here](https://github.com/dlg1206/icspark-draw21/blob
 // REMEMBER: The player's score is stored in the 'player_score' variable
 // Remove the '/*' and '*/ to once you do
 /*
-YOUR CODE HERE
+__(player_score ? 21){
+    alert("You went over 21!");
+}
  */
 // === END #3 ===
 ```
@@ -179,8 +249,23 @@ like so: `alert("You went over 21!")`
 But we'll also need an if statement to check, think you can do it?
 
 - [ ] Add an if statement to check if you went over 21
-- HINT: The player's score is stored in the `player_score` variable
-- HINT: We want to check if the `player_score` is **greater than ( > )** 21
+  - [ ] Replace `__` with the missing `if` keyword
+  - [ ] We want to check if the `player_score` is **greater than ( > )** 21. Replace the `?` with the correct symbol
+- [ ] Remove the '/\*' and '*/'
+
+<details>
+<summary>#3 Solution</summary>
+
+```
+// === START #3 ===
+// TODO #3: Did the player lose?
+// REMEMBER: The player's score is stored in the 'player_score' variable
+// Remove the '/*' and '*/ to once you do
+if(player_score > 21)
+    alert("You went over 21!");
+// === END #3 ===
+```
+</details>
 
 ### Halfway Point
 
@@ -212,6 +297,23 @@ document.getElementById('???').textContent = ???;
       the [span](https://github.com/dlg1206/icspark-draw21/blob/ref/index.html#L14): `<span id="???">Opponent</span>`.
       What is the id?
 
+<details>
+<summary>#4.1 Solution</summary>
+
+```
+// === START #4.1 ===
+// TODO #4.1: Add your opponent's name!
+// Remove the '/*' and '*/ once you do
+export const AI_ENABLED = true;    // Change from 'false' to 'true'
+const OPPONENT_NAME = "Suzie";       // Replace with your opponent's name!
+
+document.getElementById('p2_name').textContent = OPPONENT_NAME;
+
+// === END #4.1 ===
+```
+
+</details>
+
 Before we refresh the page, we need to make the opponent `h1` visible. Find TODO #4.2
 in [index.html](index.html) ([here](https://github.com/dlg1206/icspark-draw21/blob/ref/index.html#L12-L16)).
 
@@ -238,6 +340,18 @@ The end result should look like this:
 ```
 
 This will make our opponent's name visible. Refresh the page and see!
+
+<details>
+<summary>#4.2 Solution</summary>
+
+```
+<!--START #4.2-->
+<!--TODO #4.2: Add the new player!-->
+<h1 style="font-family:Arial, sans-serif;"><span id="p2_name">Opponent</span>'s Score: <span id="p2_current_score">0</span></h1>
+<!--END #4.2-->
+```
+</details>
+<br>
 
 <img src="images/demo/4_after.png" alt="after step 4">
 
@@ -293,6 +407,22 @@ if (this.#score >= 16 || this.#score > 21) {
 }
 ```
 
+<details>
+<summary>A #5 Solution</summary>
+
+```
+// === START #5 ===
+// TODO #5: Develop your own AI!
+// Remove the '/*' and '*/ once you do
+if (this.#score >= 18) {
+    // Once the score reaches 18 or more, stop drawing
+    this.#stay();
+}
+// === END #5 ===
+```
+
+</details>
+
 ### 6. Update the score
 
 Once the AI has been programmed, we'll need to update the HTML. Find TODO #6
@@ -303,21 +433,35 @@ in [opponent.js](js/opponent.js) ([here](https://github.com/dlg1206/icspark-draw
 // TODO #6: Update the score!
 // Remove the '/*' and '*/ once you do
 /*
-document.???('???').innerText = ???;
+document.???-1('???-2').innerText = ???-3;
  */
 // === END #6 ===
 ```
 
 Just like setting your and your opponent's name, we'll need to update the score as well.
 
-- [ ] Add the missing values
-    - HINT: Forgot what comes after document?
+- [ ] Replace `???` with the correct values
+    - ???-1 HINT: Forgot what comes after document?
       See [TODO #1.1](https://github.com/dlg1206/icspark-draw21/blob/ref/script.js#L14)
       and [TODO #4.1](https://github.com/dlg1206/icspark-draw21/blob/ref/js/opponent.js#L16)!
-    - HINT: This is
+    - ???-2 HINT: This is
       the [span](https://github.com/dlg1206/icspark-draw21/blob/ref/index.html#L15): `id="???">0</span></h1>`.
       What is the id?
-    - HINT: Remember the special variable we use to track the AI's score is `this.#score`
+    - ???-3 HINT: Remember the special variable we use to track the AI's score is `this.#score`
+
+<details>
+<summary>#6 Solution</summary>
+
+```
+// === START #6 ===
+// TODO #6: Update the score!
+// Remove the '/*' and '*/ once you do
+
+document.getElementById('p2_current_score').innerText = this.#score;
+
+// === END #6 ===
+```
+</details>
 
 Now you're ready to go, have fun playing against your own custom AI! :)
 

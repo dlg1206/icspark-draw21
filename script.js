@@ -48,7 +48,9 @@ export function draw_and_update_card(deck, player_score) {
     // REMEMBER: The player's score is stored in the 'player_score' variable
     // Remove the '/*' and '*/ to once you do
     /*
-    YOUR CODE HERE
+    __(player_score ? 21){
+        alert("You went over 21!");
+    }
      */
     // === END #3 ===
 
